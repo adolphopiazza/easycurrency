@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct easyCurrencyApp: App {
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra {
+            EasyCurrencyView()
+        } label: {
+            Image(systemName: "coloncurrencysign.arrow.circlepath")
         }
+        .menuBarExtraStyle(.window)
+
     }
+    
 }
