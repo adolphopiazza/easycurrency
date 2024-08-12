@@ -11,6 +11,8 @@
 		38BB21C22C698253004C45AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BB21C12C698253004C45AD /* Assets.xcassets */; };
 		38BB21C52C698253004C45AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BB21C42C698253004C45AD /* Preview Assets.xcassets */; };
 		38BB21CF2C6983DF004C45AD /* EasyCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB21CE2C6983DF004C45AD /* EasyCurrencyView.swift */; };
+		38BB21D12C698EA3004C45AD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB21D02C698EA3004C45AD /* Service.swift */; };
+		38BB21D32C698F05004C45AD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB21D22C698F05004C45AD /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		38BB21C42C698253004C45AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38BB21C62C698253004C45AD /* easyCurrency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = easyCurrency.entitlements; sourceTree = "<group>"; };
 		38BB21CE2C6983DF004C45AD /* EasyCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCurrencyView.swift; sourceTree = "<group>"; };
+		38BB21D02C698EA3004C45AD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		38BB21D22C698F05004C45AD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		38BB21CC2C698355004C45AD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				38BB21D02C698EA3004C45AD /* Service.swift */,
+				38BB21D22C698F05004C45AD /* Model.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -157,6 +163,8 @@
 			files = (
 				38BB21BE2C698252004C45AD /* easyCurrencyApp.swift in Sources */,
 				38BB21CF2C6983DF004C45AD /* EasyCurrencyView.swift in Sources */,
+				38BB21D12C698EA3004C45AD /* Service.swift in Sources */,
+				38BB21D32C698F05004C45AD /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

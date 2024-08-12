@@ -10,8 +10,16 @@ import SwiftUI
 struct EasyCurrencyView: View {
     
     var body: some View {
-        Text("Hello, easyCurrency!")
-            .padding()
+        Button("Test get latest USD currency") {
+            Task {
+                do {
+                    try await Service.shared.getLatest(currency: "usd")
+                } catch {
+                    print("error: \(error)")
+                }
+            }
+        }
+        .padding()
     }
     
 }

@@ -14,7 +14,7 @@ struct easyCurrencyApp: App {
         MenuBarExtra {
             EasyCurrencyView()
         } label: {
-            Image(systemName: "coloncurrencysign.arrow.circlepath")
+            Text("$ 5.51") // TODO: Update this with the preferred currency 
         }
         .menuBarExtraStyle(.window)
 
