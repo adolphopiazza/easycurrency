@@ -10,14 +10,16 @@ import SwiftUI
 @main
 struct easyCurrencyApp: App {
     
+    @StateObject var viewModel: EasyCurrencyViewModel = .init()
+    
     var body: some Scene {
         MenuBarExtra {
             EasyCurrencyView()
+                .environmentObject(viewModel)
         } label: {
-            Text("$ 5.51") // TODO: Update this with the preferred currency 
+            Text(viewModel.viewTitle)
         }
         .menuBarExtraStyle(.window)
-
     }
     
 }

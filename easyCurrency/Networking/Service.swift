@@ -9,21 +9,30 @@ import Foundation
 
 final class Service {
     
+    enum Errors: Error {
+        case invalidURL
+        case invalidFetch
+    }
+    
     static let shared: Service = Service()
+    
+    private let baseURL: String = "https://latest.currency-api.pages.dev/v1/currencies/"
     
     init() {}
     
-    func getLatest(currency: String) async throws {
-        guard let url = URL(string: "https://latest.currency-api.pages.dev/v1/currencies/\(currency).json") else { return }
+    func getLatest(currency: Currency) async throws -> Model {
+        guard let url = URL(string: baseURL + "\(currency.rawValue.lowercased()).json") else {
+            throw Errors.invalidURL
+        }
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let currencies = try JSONDecoder().decode(Model.self, from: data)
             
-            print(currencies)
+            return currencies
         } catch {
-            print("some error: \(error)")
-            throw error
+            print("An error occured while fetching latest currencies: \(error)")
+            throw Errors.invalidFetch
         }
     }
     

@@ -10,7 +10,7 @@ import Foundation
 struct Model: Decodable {
     
     var date: String?
-    var currencies: CurrenciesModel?
+    var currencies: [Currency: Double] = [:]
     
     struct CodingKeys: CodingKey {
         var stringValue: String
@@ -34,16 +34,14 @@ struct Model: Decodable {
                 self.date = try container.decode(String.self, forKey: key)
                 continue
             }
-            
-            // If it's some other currency as key
-            self.currencies = try container.decode(CurrenciesModel.self, forKey: key)
+
+            let currencies = try container.decode([String: Double].self, forKey: key)
+            for (currency, value) in currencies {
+                if let setCurrency = Currency(rawValue: currency.uppercased()) {
+                    self.currencies[setCurrency] = value
+                }
+            }
         }
     }
     
-}
-
-struct CurrenciesModel: Decodable {
-    let usd: Double?
-    let brl: Double?
-    let eur: Double?
 }

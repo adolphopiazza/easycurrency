@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		386656272C69ADC500A0EF15 /* EasyCurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386656262C69ADC500A0EF15 /* EasyCurrencyViewModel.swift */; };
+		38B18A8D2C6BFE400071D8F0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18A8C2C6BFE400071D8F0 /* Currency.swift */; };
 		38BB21BE2C698252004C45AD /* easyCurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB21BD2C698252004C45AD /* easyCurrencyApp.swift */; };
 		38BB21C22C698253004C45AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BB21C12C698253004C45AD /* Assets.xcassets */; };
 		38BB21C52C698253004C45AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BB21C42C698253004C45AD /* Preview Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		386656262C69ADC500A0EF15 /* EasyCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCurrencyViewModel.swift; sourceTree = "<group>"; };
+		38B18A8C2C6BFE400071D8F0 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		38BB21BA2C698252004C45AD /* easyCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BB21BD2C698252004C45AD /* easyCurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easyCurrencyApp.swift; sourceTree = "<group>"; };
 		38BB21C12C698253004C45AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				38BB21D02C698EA3004C45AD /* Service.swift */,
 				38BB21D22C698F05004C45AD /* Model.swift */,
+				38B18A8C2C6BFE400071D8F0 /* Currency.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				38BB21CE2C6983DF004C45AD /* EasyCurrencyView.swift */,
+				386656262C69ADC500A0EF15 /* EasyCurrencyViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B18A8D2C6BFE400071D8F0 /* Currency.swift in Sources */,
 				38BB21BE2C698252004C45AD /* easyCurrencyApp.swift in Sources */,
 				38BB21CF2C6983DF004C45AD /* EasyCurrencyView.swift in Sources */,
+				386656272C69ADC500A0EF15 /* EasyCurrencyViewModel.swift in Sources */,
 				38BB21D12C698EA3004C45AD /* Service.swift in Sources */,
 				38BB21D32C698F05004C45AD /* Model.swift in Sources */,
 			);
@@ -310,7 +318,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adolphopiazza.easyCurrency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,7 +348,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adolphopiazza.easyCurrency;
 				PRODUCT_NAME = "$(TARGET_NAME)";

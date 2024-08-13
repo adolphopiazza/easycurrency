@@ -9,17 +9,16 @@ import SwiftUI
 
 struct EasyCurrencyView: View {
     
+    @EnvironmentObject var viewModel: EasyCurrencyViewModel
+    
     var body: some View {
-        Button("Test get latest USD currency") {
-            Task {
-                do {
-                    try await Service.shared.getLatest(currency: "usd")
-                } catch {
-                    print("error: \(error)")
-                }
-            }
+        Button("View title: \(viewModel.viewTitle)") {
+            print("nothing for now")
         }
         .padding()
+        .task {
+            await viewModel.getCurrencies()
+        }
     }
     
 }
