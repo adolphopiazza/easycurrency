@@ -24,7 +24,7 @@ struct EasyCurrencyView: View {
                                 Image(systemName: "checkmark")
                             }
                             
-                            Text(currency.rawValue)
+                            Text("\(currency.rawValue) - \(currency.description)")
                         }
                     }
                     .disabled(viewModel.viewCurrency == currency)
@@ -45,7 +45,7 @@ struct EasyCurrencyView: View {
                                 Image(systemName: "checkmark")
                             }
                             
-                            Text(currency.rawValue)
+                            Text("\(currency.rawValue) - \(currency.description)")
                         }
                     }
                     .disabled(viewModel.baseCurrency == currency)
@@ -59,7 +59,7 @@ struct EasyCurrencyView: View {
                 Menu("\(1.formatted(.currency(code: baseCurrency.rawValue))) equals to") {
                     ForEach(Currency.allCases, id: \.rawValue) { currency in
                         if let currencyValue = currencies.currencies[currency] {
-                            Button(currencyValue.formatted(.currency(code: currency.rawValue))) {
+                            Button("\(currencyValue.formatted(.currency(code: currency.rawValue))) - \(currency.description)") {
                                 let pasteboard = NSPasteboard.general
                                 pasteboard.declareTypes([.string], owner: nil)
                                 pasteboard.setString("One \(baseCurrency.rawValue) values \(currencyValue.formatted(.currency(code: currency.rawValue))) today", forType: .string)
