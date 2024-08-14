@@ -9,19 +9,30 @@ import Foundation
 
 final class EasyCurrencyViewModel: ObservableObject {
     
-    @Published var viewTitle: String = "easyCurrency"
-    @Published var baseCurrency: Currency = .usd
-    @Published var viewCurrency: Currency = .brl
+    @Published var viewTitle: String = "EasyCurrency"
+    @Published var baseCurrency: Currency?
+    @Published var viewCurrency: Currency?
+    
+    private var currencies: Model?
     
     @MainActor func getCurrencies() async {
+        guard let baseCurrency else { return }
+        guard let viewCurrency else { return }
+        
         do {
-            let currencies = try await Service.shared.getLatest(currency: baseCurrency)
-            
-            if let currency = currencies.currencies[viewCurrency] {
-                viewTitle = "\(currency.formatted(.currency(code: viewCurrency.rawValue)))"
-            }
+            self.currencies = try await Service.shared.getLatest(currency: baseCurrency)
+            updateViewTitle()
         } catch {
             print("An error occured while fetching currencies: \(error)")
+        }
+    }
+    
+    func updateViewTitle() {
+        guard let viewCurrency else { return }
+        guard let currencies else { return }
+        
+        if let currency = currencies.currencies[viewCurrency] {
+            viewTitle = "\(currency.formatted(.currency(code: viewCurrency.rawValue)))"
         }
     }
     

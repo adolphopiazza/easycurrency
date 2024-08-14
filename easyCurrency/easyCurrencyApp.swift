@@ -19,7 +19,7 @@ struct easyCurrencyApp: App {
         } label: {
             Text(viewModel.viewTitle)
         }
-        .menuBarExtraStyle(.window)
+        .menuBarExtraStyle(.menu)
     }
     
 }
