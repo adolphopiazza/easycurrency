@@ -17,6 +17,7 @@ struct EasyCurrencyView: View {
                 ForEach(Currency.allCases, id: \.rawValue) { currency in
                     Button {
                         viewModel.viewCurrency = currency
+                        viewModel.updateViewTitle()
                     } label: {
                         HStack(spacing: 8) {
                             if let selectedCurrency = viewModel.viewCurrency, selectedCurrency == currency {
@@ -34,6 +35,10 @@ struct EasyCurrencyView: View {
                 ForEach(Currency.allCases, id: \.rawValue) { currency in
                     Button {
                         viewModel.baseCurrency = currency
+                        
+                        Task {
+                            await viewModel.getCurrencies()
+                        }
                     } label: {
                         HStack(spacing: 8) {
                             if let selectedCurrency = viewModel.baseCurrency, selectedCurrency == currency {
@@ -47,16 +52,30 @@ struct EasyCurrencyView: View {
                 }
             }
             .disabled(viewModel.viewCurrency == nil)
-        }
-        .padding()
-        .onChange(of: viewModel.baseCurrency) {
-            Task {
-                await viewModel.getCurrencies()
+            
+            if let currencies = viewModel.currencies, let baseCurrency = viewModel.baseCurrency {
+                Divider()
+                
+                Menu("\(1.formatted(.currency(code: baseCurrency.rawValue))) equals to") {
+                    ForEach(Currency.allCases, id: \.rawValue) { currency in
+                        if let currencyValue = currencies.currencies[currency] {
+                            Button(currencyValue.formatted(.currency(code: currency.rawValue))) {
+                                let pasteboard = NSPasteboard.general
+                                pasteboard.declareTypes([.string], owner: nil)
+                                pasteboard.setString("One \(baseCurrency.rawValue) values \(currencyValue.formatted(.currency(code: currency.rawValue))) today", forType: .string)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            Divider()
+            
+            Button("Quit") {
+                NSApplication.shared.terminate(nil)
             }
         }
-        .onChange(of: viewModel.viewCurrency) {
-            viewModel.updateViewTitle()
-        }
+        .padding()
     }
     
 }

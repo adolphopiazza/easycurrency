@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38284A4C2C6CF7BB0028861A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		386656262C69ADC500A0EF15 /* EasyCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCurrencyViewModel.swift; sourceTree = "<group>"; };
 		38B18A8C2C6BFE400071D8F0 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		38BB21BA2C698252004C45AD /* easyCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +61,7 @@
 		38BB21BC2C698252004C45AD /* easyCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				38284A4C2C6CF7BB0028861A /* Info.plist */,
 				38BB21BD2C698252004C45AD /* easyCurrencyApp.swift */,
 				38BB21C12C698253004C45AD /* Assets.xcassets */,
 				38BB21C62C698253004C45AD /* easyCurrency.entitlements */,
@@ -311,8 +313,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EasyCurrency;
+				INFOPLIST_FILE = easyCurrency/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = easyCurrency;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,8 +345,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EasyCurrency;
+				INFOPLIST_FILE = easyCurrency/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = easyCurrency;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,11 +13,11 @@ final class EasyCurrencyViewModel: ObservableObject {
     @Published var baseCurrency: Currency?
     @Published var viewCurrency: Currency?
     
-    private var currencies: Model?
+    var currencies: Model?
     
     @MainActor func getCurrencies() async {
         guard let baseCurrency else { return }
-        guard let viewCurrency else { return }
+        guard viewCurrency != nil else { return } // Just to avoid unnecessary API calls
         
         do {
             self.currencies = try await Service.shared.getLatest(currency: baseCurrency)
@@ -29,6 +29,7 @@ final class EasyCurrencyViewModel: ObservableObject {
     
     func updateViewTitle() {
         guard let viewCurrency else { return }
+        guard let baseCurrency else { return }
         guard let currencies else { return }
         
         if let currency = currencies.currencies[viewCurrency] {
